@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
    public float defaultHeight = 2f;
    public float crouchHeight = 1f;
    public float crouchSpeed = 3f;
+   public bool deathbarrier = false;
 
    private Vector3 moveDirection = Vector3.zero;
    private float rotationX = 0;
@@ -76,6 +77,13 @@ public class PlayerMovement : MonoBehaviour
          rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
          playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
          transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+      }
+   
+   }
+   void OnTriggerEnter(Collider other ) {
+      if(other.CompareTag("DeathBarrier")) {
+         deathbarrier = true;
+         Debug.Log("player dead");
       }
    }
 }
