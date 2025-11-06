@@ -41,7 +41,6 @@ public class ParticleTrigger : MonoBehaviour
       {
          yield return null;
       }
-      Debug.Log("Particle system animation is done!");
 
       Destroy(gameObject);
 

@@ -7,6 +7,7 @@ TagManager:
   - Bomb
   - World
   - DeathBarrier
+  - WinCondition
   layers:
   - Default
   - TransparentFX

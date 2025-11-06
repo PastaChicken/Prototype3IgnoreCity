@@ -5,8 +5,8 @@ public class SpawnerScript : MonoBehaviour
 {
    public GameObject BombPrefab;
    public float delayBeforeFirstSpawn = 2f;
-   public float spawnInterval = 1f;
-   public int numberOfSpawns = 50;
+   public float spawnInterval = .5f;
+   public int numberOfSpawns = 100;
 
    void Start()
    {

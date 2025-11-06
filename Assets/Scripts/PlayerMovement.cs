@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -84,6 +85,13 @@ public class PlayerMovement : MonoBehaviour
       if(other.CompareTag("DeathBarrier")) {
          deathbarrier = true;
          Debug.Log("player dead");
+         gameObject.transform.position.Set(0, 3, 0);
+         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+      }
+      if(other.CompareTag("WinCondition"))
+      {
+         Debug.Log("player win!");
+         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
       }
    }
 }
